@@ -43,7 +43,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ route('users.index') }}">List of Users</a></li>
                         <li><a href="{{ route('users.index') }}?eager=1">List of Users (Eager Loading)</a></li>
-                        <li><a href="#">List of Companies</a></li>
+                        <li><a href="{{ route('companies.index') }}">List of Companies</a></li>
                         <li><a href="{{ route('users.create') }}">Add new User</a></li>
                     </ul>
                 </div>
