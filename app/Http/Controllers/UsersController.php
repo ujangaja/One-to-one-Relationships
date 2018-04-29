@@ -41,7 +41,13 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create($request->only(['name', 'email', 'password']));
+        $company = new Company();
+        $company->name = $request->get('company_name');
+        $company->address = $request->get('company_address');
+        $company->phone = $request->get('company_phone');
+        $user->company()->save($company);
+        return redirect()->route('users.index');
     }
 
     /**
